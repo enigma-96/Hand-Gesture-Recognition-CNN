@@ -1,0 +1,469 @@
+
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+   
+  <style>
+    .center {
+      display: block;
+      margin-top: 130px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+    
+    h2
+    {
+      color: black;
+    }
+    h1
+    {
+      color: black;
+      box-shadow: 2cm;
+    }
+    
+    .li {
+      float: left;
+      margin-left: 30px;
+      padding:10px;
+    }
+    .image img{
+      margin-top: 120px;
+      height:100%;
+      width:100%;
+      float:right;
+    }
+    .form-style button{
+    
+      width: 89%;
+      height:70%;
+      padding: 5%;
+      background:#ffa600;
+      border-bottom: 2px solid #393f4d;
+      border-top-style: none;
+      border-right-style: none;
+      border-left-style: none;
+      color: black;
+      font-weight: bold;
+      font-size: 28px;
+      font-family: "Times New Roman";
+    }
+    
+    .form-style button:hover {
+      background-color: black;
+      color: white;
+      font-weight: bold;
+    }
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 50;
+      overflow-x: hidden;
+      padding-top: 20px;
+    
+    }
+    
+    .left {
+      left: 15;
+      border-right: 0px white solid;
+      margin:0px -15px;
+      
+    }
+    
+    
+    .right {
+      right: 0;
+      border-left: 1px white solid;
+    }
+    
+    .mytext {
+        border:1px solid #393f4d;
+        border-right:none;
+        padding:4px;
+        margin:0px;
+        float:left;
+        height:32px;
+        overflow:hidden;
+        line-height:16px;
+        width: 300px;
+        margin-left: 54px;
+      }
+    
+      .mic {
+          border:1px solid #393f4d;
+          background:white;
+          vertical-align:top;
+          padding:0px;
+          margin:0;
+          float:left;
+          height:42px;
+          width:5em;
+          text-align:center;
+          line-height:16px;
+      }
+      
+    
+    .submit {
+        border:1px solid #393f4d;
+        border-radius: 2cm;
+        height: 42px;
+        width: 160px;
+        text-align: center;
+        background: linear-gradient(rgb(255, 184, 51) 100%, rgb(20, 33, 100) 0%);
+        color:black;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: "Times New Roman";
+        vertical-align:top;
+    }
+    .submit:hover {
+      background: #ffa600;
+      color: black;
+      font-weight: bold;
+    }
+    .td {
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    
+    body
+    {
+      background:white;
+    }
+    
+    .form-style{
+      font: 95% Arial, Helvetica, sans-serif;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 16px;
+    
+    }
+    .form-style h1, .form-style a{
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: "Times New Roman";
+      text-align: center;
+      margin: -16px -16px 16px -16px;
+      color:black;
+    }
+    .form-style input[type="text"],
+    .form-style input[type="password"],
+    .form-style input[type="date"],
+    .form-style input[type="datetime"],
+    .form-style input[type="email"],
+    .form-style input[type="number"],
+    .form-style input[type="search"],
+    .form-style input[type="time"],
+    .form-style input[type="url"],
+    .form-style textarea,
+    .form-style select
+    {
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+      outline: none;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 4%;
+      border: 1px solid #ccc;
+      border-radius: 2cm;
+      padding: 3%;
+      color:#0000a0 ;
+      font: 95% Arial, Helvetica, sans-serif;
+    }
+    .form-style input[type="text"]:focus,
+    .form-style input[type="password"]:focus,
+    .form-style input[type="date"]:focus,
+    .form-style input[type="datetime"]:focus,
+    .form-style input[type="email"]:focus,
+    .form-style input[type="number"]:focus,
+    .form-style input[type="search"]:focus,
+    .form-style input[type="time"]:focus,
+    .form-style input[type="url"]:focus,
+    .form-style textarea:focus,
+    .form-style select:focus
+    {
+      box-shadow: 0 0 5px #0000a0;
+      padding: 3%;
+      border: 1px solid #0000a0;
+    }
+    
+    .site-form span,label{
+      color:black;
+    }
+    .errorlist{
+        color: red;
+        font-weight: bold;
+    }
+    
+    
+    
+    .navbar {
+      overflow: hidden;
+      background:black;
+      margin:-8px;
+      padding: 14px 16px;
+      z-index: 100;
+    }
+    
+    .navbar a {
+      float: left;
+      font-size: 20px;
+      color: white;
+      border:white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      border-radius: 10%;
+    
+    }
+    
+    .dropdown {
+      float: left;
+      overflow: hidden;
+      
+    }
+    
+    .dropdown .dropbtn {  
+      font-size: 20px;  
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color:transparent;
+      font-family: inherit;
+      margin: 0;
+      border-radius: 50%;
+    }
+    
+    .navbar a:hover {
+      background-color: orange;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+     
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 100;
+      border-radius: 15%;
+    }
+    
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+    
+    .dropdown-content a:hover {
+      border-radius: 10%;
+      background-color:#ffa600;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    
+    
+  </style>
+<title>French</title>
+
+</head>
+<body>
+
+  <div class="navbar">
+    <a  class="active" href="{% url 'home' %}">Domicile</a>
+    <a href="{% url 'animation' %}">Convertisseur</a>
+    <a href="{% url 'handgestures' %}">reconnaissance gestuelle</a>
+    {% if not user.is_authenticated %}
+    <a href="{% url 'signup' %}">S'inscrire</a></li>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Se déconnecter</a></li>
+  {% else %}
+  <a href="{% url 'login' %}">Connexion</a></li>
+  {% endif %}
+    <div class="dropdown">
+      <button class="dropbtn">
+        Choisissez une langue
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{% url 'home' %}">English</a>
+        <a href="{% url 'spanish' %}">Español</a>
+       
+        <a href="{% url 'arabic' %}">عربي</a>
+        <a href="{% url 'korean' %}">한국어</a>
+        <a href="{% url 'german' %}">Deutsch</a>
+        <a href="{% url 'japanese' %}">日本語</a>
+        <a href="{% url 'hindi' %}">हिन्दी</a>
+        <a href="{% url 'urdu' %}">اردو</a>
+        <a href="{% url 'telugu' %}">తెలుగు</a>
+      
+      </div>
+    </div> 
+  </div>
+  
+<!--animation code-->
+<div class="split left" >
+  
+
+
+	
+	<h2 align="center">Saisir du texte ou utiliser le micro</h2>
+	<br>
+	<form action="" method="post" align="left">
+		{% csrf_token %}
+					<input type="text" name="ses" class="mytext" id="speechToText" placeholder="">
+					
+					<button type="button" name="button" class="mic" onclick="record()"><img src="{% static 'mic.png' %}" height="32px" width="38px" /></button>
+		  			&nbsp&nbsp&nbsp&nbsp
+		  			<input type="submit" name="submit" class="submit" value="Soumettre">
+
+		</form>
+		<br>
+		<table cellspacing="20px">
+			<tr>
+				<td class="td">Le texte que vous avez saisi est:</td>
+				<td class="td">{{ text }}</td>
+			</tr>
+      <tr>
+				<td class="td">Mots clés dans la phrase:</td>
+				<td class="td">
+				<ul class="td" id="list" align="center">
+  					{% for word in words %}
+    				<li id="{{ i }}" style="margin-right: 8px">{{ word }}</li>
+  					{% endfor %}
+				</ul>
+			</td>
+		</tr>
+	</table>
+</div>
+  <div class="split right">
+  <h2 align="center">Animation</h2>
+
+	<div style="text-align:center">	&nbsp&nbsp
+  	<button class="submit" onclick="playPause()">Jouer pause</button>
+  	<!--  LETS USE ONLY PLAY PAUSE BUTTON WITH 720 *420 
+
+  	<button onclick="makeBig()">Big</button>
+  	<button onclick="makeSmall()">Small</button>
+  	<button onclick="makeNormal()">Normal</button>-->
+
+
+  	<video id="videoPlayer" width="600" height="350"  preload="auto" autoplay>
+    	<source src="" type="video/mp4">
+    Your browser does not support HTML5 video.
+  	</video>
+  	</div></div>
+   
+     <div id="google_translate_element"></div>
+
+
+<script>
+	//webkitSpeechRecognition api for speech to text conversion
+	function record(){
+		var recognition = new webkitSpeechRecognition();
+		recognition.lang='fr';
+
+		recognition.onresult = function(event){
+			console.log(event)
+			document.getElementById('speechToText').value = event.results[0][0].transcript;
+		}
+		recognition.start();
+	 }
+	function play()
+	{
+		var videoSource = new Array();
+		var	videos = document.getElementById("list").getElementsByTagName("li");
+		var j;
+		for(j=0;j<videos.length;j++)
+		{
+			videoSource[j] = "/static/" + videos[j].innerHTML +".mp4";
+		}
+
+		var i = 0; // define i
+		var videoCount = videoSource.length;
+
+		function videoPlay(videoNum)
+		{
+			document.getElementById("list").getElementsByTagName("li")[videoNum].style.color = "orange";
+			document.getElementById("list").getElementsByTagName("li")[videoNum].style.fontSize = "xx-large";
+			document.getElementById("videoPlayer").setAttribute("src", videoSource[videoNum]);
+	    	document.getElementById("videoPlayer").load();
+	    	document.getElementById("videoPlayer").play();
+
+		}
+		document.getElementById('videoPlayer').addEventListener('ended', myHandler, false);
+		document.getElementById("list").getElementsByTagName("li")[0].style.color = "orange";
+		document.getElementById("list").getElementsByTagName("li")[0].style.fontSize = "xx-large";
+
+		videoPlay(0); // play the video
+
+		function myHandler()
+		{
+	 		document.getElementById("list").getElementsByTagName("li")[i].style.color = "green";
+			document.getElementById("list").getElementsByTagName("li")[i].style.fontSize = "20px";
+			i++;
+	    	if (i == videoCount)
+	    	{
+	       	    document.getElementById("videoPlayer").pause();
+	    	}
+	     	else
+	     	{
+	        	videoPlay(i);
+	    	}
+		}
+	}
+	/* LETS USE ONLY PLAY PAUSE BUTTON WITH 720 *420 ,IT FITS THE SCREEN
+	function makeBig() {
+	    document.getElementById("videoPlayer").width = 560;
+		document.getElementById("videoPlayer").height = 360;
+	}
+
+	function makeSmall() {
+	    document.getElementById("videoPlayer").width = 320;
+		document.getElementById("videoPlayer").height = 180;
+	}
+
+	function makeNormal() {
+	    document.getElementById("videoPlayer").width = 420;
+		document.getElementById("videoPlayer").height =280;
+	}*/
+	function playPause(){
+  		if (document.getElementById("videoPlayer").paused){
+    		play();}
+  		else{
+    		document.getElementById("videoPlayer").pause();}
+		}
+
+	</script>
+
+<!--/animation code-->
+<div class="wrapper" >
+    {% block content %}
+    {% endblock %}
+  </div>
+  
+</body>
+</html>
